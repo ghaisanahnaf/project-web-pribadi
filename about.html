@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Personal Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-primary text-main">
+
+    <nav class="fixed w-full z-[100] glass py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="logo-text">PRESTIGE<span>.</span></div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link gold-active">About Me</a>
+                <a href="karya.html" class="nav-link">Karya</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="kontak.html" class="nav-link">Kontak</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden flex flex-col space-y-2 focus:outline-none">
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-gold transition-all"></span>
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-overlay md:hidden">
+        <div class="mobile-nav-container">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT ME</a>
+            <a href="karya.html">KARYA</a>
+            <a href="blog.html">BLOG</a>
+            <a href="kontak.html">KONTAK</a>
+        </div>
+    </div>
+
+    <main class="min-h-screen pt-32 pb-20 container mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+
+            <div class="w-full md:w-1/2" data-aos="fade-right">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-yellow-300 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000">
+                    </div>
+                    <div class="relative bg-slate-900 rounded-lg overflow-hidden border border-white/10">
+                        <img src="img/minisocc.jpg" alt="About Ghaisan"
+                            class="w-full grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 about-content" data-aos="fade-left">
+                <h5 class="custom-badge mb-4">THE STORY BEHIND</h5>
+                <h2 class="font-extrabold mb-6">
+                    Crafting Excellence <br>
+                    <span class="gold-text">Since 2024.</span>
+                </h2>
+
+                <p class="mb-6">
+                    Halo, saya <span class="highlight-name">Ghaisan</span>. Saya adalah seorang visioner yang
+                    bergerak di persimpangan antara seni dan teknologi...
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="border-l-2 border-gold pl-4">
+                        <h4 class="text-xl md:text-2xl font-bold">Artist</h4>
+                        <p class="text-xs md:text-sm">Visual Storytelling</p>
+                    </div>
+                    <div class="border-l-2 border-gold pl-4">
+                        <h4 class="text-xl md:text-2xl font-bold">Developer</h4>
+                        <p class="text-xs md:text-sm">Clean & Modern Code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <footer class="py-10 border-t border-black/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <p class="text-[11px] uppercase tracking-[0.3em] font-medium copyright-text">
+                    &copy; 2025 Ghaisan Portfolio. All Rights Reserved.
+                </p>
+
+                <div class="flex gap-8 items-center">
+                    <a href="https://instagram.com/ghais4nahnaff_" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6285380108334" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

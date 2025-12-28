@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Excellence | Level 9999999</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="fixed w-full z-[100] glass py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="logo-text">PRESTIGE<span>.</span></div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="index.html" class="nav-link gold-active">Home</a>
+                <a href="about.html" class="nav-link">About Me</a>
+                <a href="karya.html" class="nav-link">Karya</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="kontak.html" class="nav-link">Kontak</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden flex flex-col space-y-2 focus:outline-none">
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-gold transition-all"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-overlay md:hidden">
+        <div class="mobile-nav-container">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT ME</a>
+            <a href="karya.html">KARYA</a>
+            <a href="blog.html">BLOG</a>
+            <a href="kontak.html">KONTAK</a>
+        </div>
+    </div>
+
+    <main class="min-h-screen relative flex items-center overflow-hidden pt-10">
+        <div class="container mx-auto px-4 flex flex-nowrap items-center gap-4 md:gap-12">
+
+            <div class="w-3/5 md:w-1/2 z-10" data-aos="fade-right">
+                <h5 class="custom-badge mb-2">ARTIST | DEVELOPER | DESIGNER</h5>
+                <h1 class="custom-hello font-extrabold mb-4 leading-tight">
+                    Hello, I'm <span id="typing-text" class="gold-text">ghaisan</span>
+                </h1>
+                <p class="text-gray-400 text-xs md:text-lg leading-relaxed mb-6 line-clamp-4 md:line-clamp-none">
+                    Selamat datang di dunia digital saya yang eksklusif. Mari jelajahi tentang saya disini !
+                </p>
+
+                <a href="karya.html" class="btn-primary text-[10px] md:text-base px-4 py-2 md:px-8 md:py-4">
+                    Check Gallery &rarr;
+                </a>
+            </div>
+
+            <div class="w-2/5 md:w-1/2 relative photo-glow" data-aos="fade-left">
+                <div
+                    class="floating-anim relative z-10 w-full aspect-[3/4] md:aspect-[4/5] bg-slate-800 rounded-lg overflow-hidden border-2 border-white/5 shadow-2xl transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+
+                    <img src="/img/minisocc.jpg" alt="Profile"
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+
+                    <div
+                        class="absolute bottom-2 right-2 md:bottom-6 md:right-6 bg-gold text-black px-2 py-1 md:p-4 font-bold text-[8px] md:text-xs rounded shadow-lg">
+                        EST. 2024
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <footer class="py-10 border-t border-black/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <p class="text-[11px] uppercase tracking-[0.3em] font-medium copyright-text">
+                    &copy; 2025 Ghaisan Portfolio. All Rights Reserved.
+                </p>
+
+                <div class="flex gap-8 items-center">
+                    <a href="https://instagram.com/ghais4nahnaff_" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6285380108334" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

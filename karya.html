@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya — Personal Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-primary text-main">
+
+    <nav class="fixed w-full z-[100] glass py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="logo-text">PRESTIGE<span>.</span></div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Me</a>
+                <a href="karya.html" class="nav-link gold-active">Karya</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="kontak.html" class="nav-link">Kontak</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden flex flex-col space-y-2 focus:outline-none">
+                <span class="w-8 h-0.5 bg-white transition-all"></span>
+                <span class="w-8 h-0.5 bg-gold transition-all"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-overlay md:hidden">
+        <div class="mobile-nav-container">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT ME</a>
+            <a href="karya.html">KARYA</a>
+            <a href="blog.html">BLOG</a>
+            <a href="kontak.html">KONTAK</a>
+        </div>
+    </div>
+
+    <main class="pt-32 pb-20 container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h5 class="custom-badge mb-4">PORTFOLIO</h5>
+            <h2 class="text-4xl md:text-5xl font-extrabold gold-text">Selected Works<span>.</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="portfolio-item group" data-aos="zoom-in">
+                <div class="relative overflow-hidden rounded-lg aspect-square bg-slate-800">
+                    <img src="img/minisocc.jpg" alt="Work 1"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <div
+                        class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+                        <span class="text-gold text-xs tracking-widest uppercase mb-2">Graphic Design</span>
+                        <h3 class="text-xl font-bold text-center">Modern Aesthetics</h3>
+                        <div class="mt-4 w-10 h-0.5 bg-gold"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item group" data-aos="zoom-in" data-aos-delay="100">
+                <div class="relative overflow-hidden rounded-lg aspect-square bg-slate-800">
+                    <img src="img/minisocc.jpg" alt="Work 2"
+                        class="w-full h-full object-cover transition duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <div
+                        class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6">
+                        <span class="text-gold text-xs tracking-widest uppercase mb-2">Web Development</span>
+                        <h3 class="text-xl font-bold text-center">Interactive Experience</h3>
+                        <div class="mt-4 w-10 h-0.5 bg-gold"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <footer class="py-10 border-t border-black/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <p class="text-[11px] uppercase tracking-[0.3em] font-medium copyright-text">
+                    &copy; 2025 Ghaisan Portfolio. All Rights Reserved.
+                </p>
+
+                <div class="flex gap-8 items-center">
+                    <a href="https://instagram.com/ghais4nahnaff_" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6285380108334" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
