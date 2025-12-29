@@ -848,3 +848,429 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+/* Pastikan body dan header berwarna Cream */
+body {
+    background-color: #F9F7F2 !important;
+    color: #2C2C2C !important;
+}
+
+nav {
+    background-color: #F9F7F2 !important;
+}
+
+/* Mengubah teks deskripsi agar kontras (Coklat Tua) */
+p, .text-slate-400 {
+    color: #4A3A2A !important;
+    opacity: 1 !important;
+}
+
+/* Hero Section / Teks Utama */
+h1, .text-white {
+    color: #2C2C2C !important;
+}
+
+/* Warna Emas/Wood Aksen */
+.text-gold, .gold-text, .text-yellow-500 {
+    color: #8D6E63 !important; /* Warna Kayu Bronze */
+}
+
+/* Footer Minimalis Sesuai Permintaan */
+footer {
+    background-color: #5D4037 !important;
+    padding: 3rem 0 !important;
+}
+
+footer p, footer i {
+    color: #F9F7F2 !important;
+}
+
+nav {
+    /* Menggunakan rgba untuk transparansi. 0.8 berarti 80% terlihat, 20% transparan */
+    background-color: rgba(249, 247, 242, 0.7) !important; 
+    
+    /* Efek blur di belakang navbar agar konten yang lewat di bawahnya terlihat estetik */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Untuk Safari */
+    
+    /* Garis bawah tipis agar tetap ada batas yang jelas */
+    border-bottom: 1px solid rgba(93, 64, 55, 0.1); 
+    
+    /* Pastikan navbar tetap di atas */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.glass {
+    background: rgba(249, 247, 242, 0.7) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(93, 64, 55, 0.1);
+}
+
+@media (max-width: 768px) {
+    /* Memastikan tidak ada margin atas tambahan pada kontainer gambar di mobile */
+    .grid > div:first-child {
+        margin-top: 0 !important;
+    }
+    
+    /* Mengatur tinggi gambar agar tidak terlalu dominan di layar HP jika diperlukan */
+    img.object-cover {
+        height: 300px !important; 
+    }
+}
+
+/* Efek Kartu Super Kelas Dunia */
+.prestige-card {
+    background: rgba(255, 255, 255, 0.4); /* Efek Glassmorphism transparan */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(93, 64, 55, 0.1); /* Border halus warna kayu */
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(93, 64, 55, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+/* Efek Hover (Menggoda) */
+.prestige-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Melayang ke atas & sedikit membesar */
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 40px -15px rgba(141, 110, 99, 0.2);
+    border: 1px solid rgba(141, 110, 99, 0.3);
+}
+
+/* Animasi Floating Otomatis (Slow Motion) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Delay Animasi agar tidak bergerak bersamaan (lebih natural) */
+.delay-1 { animation-delay: 0s; }
+.delay-2 { animation-delay: 1s; }
+.delay-3 { animation-delay: 2s; }
+
+/* Container Utama Card */
+.prestige-card {
+    position: relative;
+    background: #F9F7F2; /* Warna dasar cream */
+    border-radius: 1.5rem;
+    padding: 2rem;
+    overflow: hidden; /* Memastikan animasi tidak keluar jalur */
+    z-index: 1;
+}
+
+/* Layer Animasi Garis Berjalan */
+.prestige-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* Gradasi sesuai tema: Bronze, Gold, Wood */
+    background: conic-gradient(
+        transparent, 
+        rgba(141, 110, 99, 0.3), 
+        rgba(212, 175, 55, 0.8), 
+        rgba(141, 110, 99, 0.3), 
+        transparent 30%
+    );
+    animation: rotate-border 6s linear infinite;
+    z-index: -2;
+}
+
+/* Layer Penutup agar isi tetap bersih */
+.prestige-card::after {
+    content: "";
+    position: absolute;
+    inset: 2px; /* Ketebalan garis (2px) */
+    background: #F9F7F2; 
+    border-radius: calc(1.5rem - 2px);
+    z-index: -1;
+}
+
+/* Animasi Rotasi */
+@keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Efek Floating yang sudah ada tetap kita pertahankan */
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Animasi Transisi Warna Otomatis */
+@keyframes auto-grayscale {
+    0%, 100% { filter: grayscale(100%); } /* Mulai dengan Hitam Putih */
+    50% { filter: grayscale(0%); }        /* Berubah ke Warna Asli di tengah durasi */
+}
+
+@media (max-width: 768px) {
+    /* Terapkan animasi hanya di mobile */
+    .mobile-auto-color {
+        animation: auto-grayscale 5s ease-in-out infinite;
+    }
+}
+
+/* Di Desktop tetap menggunakan Hover seperti biasa agar interaktif */
+@media (min-width: 769px) {
+    .desktop-hover-color {
+        filter: grayscale(100%);
+        transition: filter 0.7s ease;
+    }
+    .desktop-hover-color:hover {
+        filter: grayscale(0%);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mengatur ukuran frame foto di layar HP agar tidak memenuhi layar */
+    .prestige-card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Memastikan teks Hero tidak terlalu mepet ke pinggir */
+    h1 {
+        font-size: 3rem !important; /* Ukuran font mobile yang lebih pas */
+    }
+
+    /* Padding tambahan untuk main agar tidak tertutup navbar */
+    main {
+        padding-top: 5rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+/* Custom Curve untuk Efek Elegan */
+.prestige-card {
+    border-radius: 3rem !important; /* Membuat sudut sangat melengkung (tidak kotak) */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+    /* Agar foto di mobile tidak terlalu kecil dan tetap melengkung */
+    .prestige-card {
+        width: 280px !important;
+        height: 350px !important;
+        border-radius: 2.5rem !important;
+        margin-bottom: 0px !important;
+    }
+    
+    /* Menghilangkan ruang kosong berlebih di atas hero mobile */
+    main.min-h-screen {
+        padding-top: 80px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Memastikan teks profesi tetap satu baris di mobile */
+    .hero-tags {
+        font-size: 9px !important; /* Ukuran font lebih kecil agar muat */
+        letter-spacing: 0.1em !important; /* Mengurangi jarak antar huruf sedikit */
+        justify-content: flex-start; /* Merapat ke kiri sesuai desain teks Hello */
+        width: 100%;
+        overflow: visible; 
+        white-space: nowrap; /* Kunci agar tidak berpindah baris */
+    }
+
+    /* Menyesuaikan margin sapaan Hello agar tidak terlalu jauh dari tags */
+    h1 {
+        margin-top: 0.5rem !important;
+    }
+}
+
+
+
+
+.prestige-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;  /* Foto akan memenuhi kotak tanpa gepeng */
+    border-radius: 3rem !important; /* Memberikan lengkungan langsung pada fotonya */
+}
+
+
+
+.prestige-card {
+    position: relative;
+    border-radius: 1.5rem !important; 
+    overflow: hidden !important; 
+    isolation: isolate; 
+    /* Tambahkan padding tipis agar cahaya emas terlihat di pinggiran */
+    padding: 3px !important; 
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto !important; /* Biarkan tinggi menyesuaikan isi teks */
+}
+
+/* Lapisan Animasi Cahaya (Tetap di belakang) */
+.prestige-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        rgba(212, 175, 55, 0.9), /* Warna Emas Terang */
+        transparent 30%
+    );
+    animation: rotate-border 4s linear infinite;
+    z-index: -2;
+}
+
+/* Lapisan Penutup (Background di belakang foto) */
+.prestige-card::after {
+    content: "";
+    position: absolute;
+    inset: 3px; /* Jarak yang sama dengan padding card */
+    background: #F9F7F2; 
+    border-radius: calc(2rem - 1.5px);
+    z-index: -1;
+}
+
+/* Pastikan Foto sedikit lebih melengkung agar pas di dalam frame */
+.prestige-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: calc(2rem - 1.5px) !important;
+}
+
+@keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* Animasi Melayang yang Memperdalam Bayangan */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+        box-shadow: 0 20px 50px -10px rgba(93, 64, 55, 0.3);
+    }
+    50% { 
+        transform: translateY(-20px); /* Naik lebih tinggi */
+        /* Saat naik, bayangan di bawah membesar dan memudar (efek realistik) */
+        box-shadow: 0 40px 70px -15px rgba(93, 64, 55, 0.2);
+    }
+}
+
+/* Pastikan class animate-float menggunakan keyframes di atas */
+.animate-float {
+    animation: float 5s ease-in-out infinite;
+}
+
+
+
+/* Pastikan card selalu memiliki background dan border yang konsisten */
+.prestige-card {
+    background: #F9F7F2;
+    border-radius: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    /* Cahaya berjalan */
+    padding: 3px; 
+    box-shadow: 0 15px 35px rgba(93, 64, 55, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Khusus perbaikan tampilan desktop yang terpotong */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1100px !important; /* Membatasi lebar agar teks tidak terlalu melebar ke samping */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .prestige-card {
+        /* Kurangi padding di mobile agar tidak memakan banyak ruang */
+        padding: 1.5rem !important; 
+        border-radius: 2rem !important;
+        margin-bottom: 1rem; /* Jarak antar card */
+    }
+
+    /* Khusus untuk card gambar, kita tetap kunci tingginya agar estetik */
+    .prestige-card.w-full.h-\[300px\] {
+        height: 300px !important;
+    }
+
+    /* Menengahkan seluruh konten di halaman */
+main.min-h-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Tengah secara vertikal */
+    align-items: center;    /* Tengah secara horizontal */
+}
+
+/* Memperbaiki card agar pas dengan teks */
+.prestige-card {
+    height: auto !important;      /* Tinggi mengikuti konten */
+    min-height: fit-content;      /* Minimal setinggi konten */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;           /* Teks di dalam card juga tengah */
+    padding: 2rem;
+    width: 100%;                  /* Pastikan lebar penuh dalam grid */
+}
+
+@media (max-width: 768px) {
+    .prestige-card {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem;    /* Jarak antar card di mobile */
+    }
+    
+    /* Membatasi lebar card di mobile agar tidak terlalu mepet ke pinggir layar */
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mengurangi jarak samping kontainer utama agar card bisa lebih lebar */
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        max-width: 100% !important;
+    }
+
+    /* Mengoptimalkan card agar teks tidak terlalu memanjang ke bawah */
+    .prestige-card {
+        width: 100% !important;
+        padding: 1.25rem !important; /* Padding dalam yang lebih rapat */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Memastikan teks menggunakan ruang yang tersedia */
+    .prestige-card p {
+        font-size: 14px !important; /* Sedikit lebih kecil agar muat lebih banyak kata per baris */
+        line-height: 1.6;
+        text-align: center;
+    }
+}
