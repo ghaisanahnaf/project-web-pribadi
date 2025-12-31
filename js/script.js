@@ -161,3 +161,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function openGallery(element) {
+    const overlay = document.getElementById("galleryOverlay");
+    const expandedImg = document.getElementById("expandedImg");
+    const caption = document.getElementById("caption");
+    const downloadBtn = document.getElementById("downloadBtn"); // Ambil elemen tombol
+    
+    const clickedImg = element.querySelector("img");
+
+    if (clickedImg) {
+        // Set sumber gambar dan caption
+        expandedImg.src = clickedImg.src;
+        caption.innerHTML = clickedImg.alt || "Sannproject Gallery";
+        
+        // Update link download agar sesuai dengan gambar yang diklik
+        downloadBtn.href = clickedImg.src;
+
+        // Tampilkan overlay
+        overlay.style.display = "flex";
+        
+        // Animasi halus
+        setTimeout(() => {
+            expandedImg.style.transition = "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)";
+            expandedImg.style.transform = "scale(1)";
+            expandedImg.style.opacity = "1";
+        }, 50);
+    }
+}
+
+function closeGallery() {
+    const overlay = document.getElementById("galleryOverlay");
+    const expandedImg = document.getElementById("expandedImg");
+    
+    expandedImg.style.transform = "scale(0.8)";
+    expandedImg.style.opacity = "0";
+    
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 300);
+}
+
+// Pastikan kode ini diletakkan setelah library GSAP dimuat
+document.addEventListener("DOMContentLoaded", function() {
+    // Animasi melayang untuk semua elemen dengan class .js-floating
+    gsap.to(".js-floating", {
+        y: -20, // Jarak melayang ke atas
+        duration: 2, // Durasi (detik)
+        ease: "power1.inOut",
+        yoyo: true, // Kembali lagi ke bawah
+        repeat: -1, // Mengulang selamanya
+        stagger: {
+            each: 1, // Memberi jeda antar kartu agar tidak berbarengan
+        }
+    });
+});
+

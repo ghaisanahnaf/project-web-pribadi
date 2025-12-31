@@ -1274,3 +1274,133 @@ main.min-h-screen {
         text-align: center;
     }
 }
+
+@media (max-width: 640px) {
+    /* Menghilangkan padding kontainer agar card bisa menyentuh hampir ke tepi layar */
+    .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    /* Memastikan card teks tidak memiliki tinggi kaku dan padding-nya pas */
+    .prestige-card {
+        padding: 1.25rem 1rem !important; /* Atas-Bawah 1.25, Kiri-Kanan 1 */
+        border-radius: 1.75rem !important;
+        height: auto !important; /* WAJIB: agar tidak ada ruang kosong di bawah teks */
+    }
+
+    /* Menyesuaikan ukuran font agar teks tidak terlalu memanjang */
+    .prestige-card p {
+        font-size: 0.875rem !important; /* setara text-sm */
+        line-height: 1.6;
+    }
+}
+
+.prestige-card {
+    /* Tambahkan ini untuk akselerasi hardware GPU */
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0); /* Memaksa render 3D agar lebih halus */
+}
+
+/* Jika Anda menggunakan animasi floating, buat lebih ringan di mobile */
+@media (max-width: 768px) {
+    .animate-float {
+        animation: float 6s ease-in-out infinite; /* Perlambat durasi agar beban CPU berkurang */
+    }
+    
+    /* Kurangi blur jika scroll masih terasa berat */
+    .backdrop-blur-md {
+        backdrop-filter: blur(4px); 
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Penting untuk kelancaran scroll di iPhone/iOS */
+}
+
+/* Memaksa gambar tetap di dalam grid dengan rapi */
+.gallery-item {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* WAJIB: Memastikan gambar tidak gepeng */
+    object-position: center !important;
+    display: block !important;
+}
+
+#downloadBtn {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Memastikan gambar di overlay tidak terlalu besar di layar kecil */
+@media (max-width: 640px) {
+    #expandedImg {
+        max-height: 60vh;
+    }
+}
+
+#downloadBtn {
+    border: none;
+    z-index: 10000; /* Pastikan di atas overlay */
+    text-decoration: none;
+}
+
+#downloadBtn span, 
+#downloadBtn i {
+    color: white !important; /* Memaksa warna putih agar tidak gelap */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Animasi saat tombol ditekan */
+#downloadBtn:active {
+    transform: scale(0.95);
+    background-color: #B38F20;
+}
+
+#galleryOverlay {
+    background: rgba(15, 15, 15, 0.95) !important; /* Hitam pekat tapi tetap elegan */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Pastikan Close Button juga terlihat terang */
+#galleryOverlay span.absolute {
+    color: white !important;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* Pastikan link tidak bergaris bawah */
+.contact-card-v2 {
+    text-decoration: none !important;
+}
+
+/* Memperbesar ukuran kartu di desktop */
+@media (min-width: 1024px) {
+    .contact-card-v2 div.bg-white {
+        min-height: 380px; /* Lebih tinggi agar tampak eksklusif */
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Efek hover saat mouse mendekat */
+    .contact-card-v2:hover div.bg-white {
+        box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1) !important;
+        border-color: #D4AF37 !important;
+    }
+}
